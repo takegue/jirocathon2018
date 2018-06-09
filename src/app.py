@@ -10,11 +10,11 @@ data = json.load(data)
 
 utils = Utils()
 
-@app.route('/')
+@app.route('/start')
 def hello():
     return render_template('index.html')
 
-@app.route('/top')
+@app.route('/')
 def route_top():
     return render_template('top.html')
 

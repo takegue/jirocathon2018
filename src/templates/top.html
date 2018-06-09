@@ -1,6 +1,15 @@
 {% extends "layout.html" %} {% block content %}
 <!-- 画面1: プレイヤー決め -->
-<div id='top'>
-  <img src="{{url_for('static', filename='images/top.png')}}" style="width: 100%;">
+<div id='top' style='height: 100%;'>
+  <a href='/start'><img src="{{url_for('static', filename='images/top.png')}}" style="width: 100%;"></a>
 </div>
+
+<style>
+body {  
+  background-color: #373737;
+}
+</style>
+
 {% endblock %}
+
+

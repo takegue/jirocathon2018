@@ -4,18 +4,15 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
+      {% for position in positions %}
       <p style="margin-left:15px; font-weight:bold; font-size:120%;">
-        あなたの役職はxxxです。
+        あなたの役職は{{position}}です。
       </p>
-      <p style="margin-left:15px;">
-        {{num_p}}自分の行動を選択してください
-      </p>
-      <div class="col-md-12">
-        <h3>人数を決めて</h3>
-      </div>
-      <div class="col-md-12" style="margin-top:10px; margin-bottom:20px;">
 
-      </div>
+      <p style="margin-left:15px;">
+        自分の行動を選択してください
+      </p>
+      {% endfor %}
     </div>
   </div>
 </div>

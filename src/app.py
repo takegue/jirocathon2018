@@ -27,10 +27,10 @@ def get_participants():
     num_p = 3
     # data[0]["participant"] = str(num_p)
 
-    # TODO: num_pの値から、プレイヤーの役職を決める
-    data = utils.decide_positions(num_p)
+    data, positions = utils.decide_positions(num_p)
+    print(positions)
     print(data)
-    return render_template('play_position.html', num_p=num_p)
+    return render_template('play_position.html', positions=positions, data=data)
 
 
 if __name__ == '__main__':

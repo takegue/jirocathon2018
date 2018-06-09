@@ -27,4 +27,5 @@ class Utils():
         if '新規' not in self.positions[:num_p]:
             # TODO : player_2　の2をランダムに
             self.data[0]['player_2']['position'] = "新規"
-        return self.data
+            self.positions[1] = "新規"
+        return self.data, self.positions[:num_p]

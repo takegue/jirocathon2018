@@ -7,3 +7,12 @@
 memo:
 
 悪循環のジェネーレタを作る
+
+```
+How to run:
+
+./bootstrap.sh
+
+```
+
+

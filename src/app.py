@@ -5,20 +5,22 @@ import json
 # from src.position import Positioner
 
 
-data = open('../data/data.json', 'r')
+data = open('static/misc/data.json', 'r')
 data = json.load(data)
-utils = Utils()
 
+utils = Utils()
 
 @app.route('/')
 def hello():
     return render_template('index.html')
 
-
 @app.route('/top')
 def route_top():
     return render_template('top.html')
 
+@app.route('/timer')
+def route_timer():
+    return render_template('timer.html')
 
 @app.route('/participants', methods=['GET', 'POST'])
 def get_participants():

@@ -1,0 +1,22 @@
+{% extends "layout.html" %} {% block content %}
+<!-- development version, includes helpful console warnings -->
+<script src="{{url_for('static', filename='js/timer.js')}}"> </script>
+<style>
+#timer_text {
+  font-size: 120px;
+}
+</style>
+
+<html>
+  <body>
+    <div id='top'>
+      <p>ギルティする人を選んでください</p>
+      <p>
+      残り <p id='timer_text'> 300 </p> 秒
+      </p>
+      <p>
+      </p>
+    </div>
+  </body>
+</html>
+{% endblock %}

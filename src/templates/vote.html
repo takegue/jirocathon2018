@@ -1,0 +1,26 @@
+{% extends "layout.html" %} {% block content %}
+<!-- 画面1: プレイヤー決め -->
+<div class="form">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <p style="margin-left:15px;">
+          どの人が新規さんだと思いました？
+        </p>
+        <p>
+          <br> {% for i in range(num_p) %} {% if i+1 != now %}
+          <input type="radio" name="player" value="True">Player{{i+1}} {% endif %} {% endfor %}
+        </p>
+        <div class="col-md-12" style="margin-top:10px; margin-bottom:20px;">
+          <form action="/result" method="post" class="form-inline">
+            <input type="number" name="participants" value="3" />
+            <button type="submit" value="{}" class="btn btn-primary" style="margin-top:5px;">
+              Upload
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

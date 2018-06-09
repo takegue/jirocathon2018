@@ -4,18 +4,18 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
+        Player{{now}}さん、
         <p style="margin-left:15px;">
-          二狼
+          どの人が新規さんだと思いました？
         </p>
-        <div class="col-md-12">
-          <h3>人数を決めてください。</h3>
-          <p>携帯を持っているあなたから時計周りにプレイヤー1から順に割り振ってください。</p>
-        </div>
+        <p>
+          <br> {% for i in range(num_p) %} {% if i+1 != now %}
+          <input type="radio" name="player" value="True">Player{{i+1}} {% endif %} {% endfor %}
+        </p>
         <div class="col-md-12" style="margin-top:10px; margin-bottom:20px;">
-          <form action="/participants" method="post" class="form-inline">
-            <input type="number" name="participants" value="3" />
+          <form action="/result" method="post" class="form-inline">
             <button type="submit" value="{}" class="btn btn-primary" style="margin-top:5px;">
-              Start
+              決定
             </button>
           </form>
         </div>

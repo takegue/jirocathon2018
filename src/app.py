@@ -55,8 +55,23 @@ def doing_in_night():
     print(positions)
     print(data)
     now = 1
+
+    
+
     return render_template('play_position.html', positions=positions, data=data, now=now,num_p=num_p)
 
+@app.route('/vote', methods=['GET', 'POST'])
+def vote():
+    # p_num = data[0]["participant"]
+    num_p = 3
+    now = 2
+    print(now)
+    return render_template('vote.html', num_p=num_p, now=now)
+
+
+@app.route('/vote', methods=['GET', 'POST'])
+def result():
+    return render_template('result.html')
 
 if __name__ == '__main__':
 

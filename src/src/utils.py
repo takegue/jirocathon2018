@@ -11,7 +11,7 @@ class Utils():
     KISHI = 5
 
     def __init__(self):
-        self.data = open('../data/data.json', 'r')
+        self.data = open('static/misc/data.json', 'r')
         self.data = json.load(self.data)
         self.positions = ['新規', 'ジロリアン', '一般人', '店員', 'かえぽん']
 
@@ -29,4 +29,3 @@ class Utils():
             self.data[0]['player_2']['position'] = "新規"
             self.positions[1] = "新規"
         return self.data, self.positions[:num_p]
-    

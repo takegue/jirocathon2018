@@ -5,8 +5,9 @@ import json
 # from src.position import Positioner
 
 
-data = open('../data/data.json', 'r')
+data = open('static/misc/data.json', 'r')
 data = json.load(data)
+
 utils = Utils()
 
 @app.route('/')

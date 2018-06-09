@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+    web:
+      image: jirocathon
+      build:
+          dockerfile: Dockerfile
+          context: .
+      depends_on:
+          - ngrok
+      ports:
+          - 10701:80
+      volumes:
+          - ./:/app
+      environment:
+          - DJANGO_DEBUG=1
+      env_file:
+          .env 
+
+    ngrok:
+      image: wernight/ngrok
+      environment: 
+          - NGROK_PORT=--region ap web:80
+      ports:
+          - 4040

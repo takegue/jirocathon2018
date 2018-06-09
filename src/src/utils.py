@@ -29,3 +29,4 @@ class Utils():
             self.data[0]['player_2']['position'] = "新規"
             self.positions[1] = "新規"
         return self.data, self.positions[:num_p]
+    

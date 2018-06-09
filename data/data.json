@@ -3,6 +3,7 @@
     "participant": "",
     "player_1": {
       "position": "",
+      "Is_act_done?": "True",
       "night": {
         "behavior": ""
       },
@@ -12,6 +13,7 @@
     },
     "player_2": {
       "position": "",
+      "Is_act_done?": "False",
       "night": {
         "behavior": ""
       },
@@ -21,6 +23,7 @@
     },
     "player_3": {
       "position": "",
+      "Is_act_done?": "False",
       "night": {
         "behavior": ""
       },
@@ -30,6 +33,7 @@
     },
     "player_4": {
       "position": "",
+      "Is_act_done?": "False",
       "night": {
         "behavior": ""
       },
@@ -39,6 +43,7 @@
     },
     "player_5": {
       "position": "",
+      "Is_act_done?": "False",
       "night": {
         "behavior": ""
       },
@@ -48,6 +53,7 @@
     },
     "player_6": {
       "position": "",
+      "Is_act_done?": "False",
       "night": {
         "behavior": ""
       },

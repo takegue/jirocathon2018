@@ -30,7 +30,21 @@ def get_participants():
     data, positions = utils.decide_positions(num_p)
     print(positions)
     print(data)
-    return render_template('play_position.html', positions=positions, data=data)
+    now = 1
+    return render_template('play_position.html', positions=positions, data=data, now=now)
+
+@app.route('/playing_do', methods=['GET', 'POST'])
+def doing_in_night():
+    # TODO: /participantsへのpostの参加人数を受け取って、jsonに入れる
+    num_p = 3
+    # data[0]["participant"] = str(num_p)
+
+    data, positions = utils.decide_positions(num_p)
+    print(positions)
+    print(data)
+    now = 1
+    return render_template('play_position.html', positions=positions, data=data, now=now)
+
 
 
 if __name__ == '__main__':

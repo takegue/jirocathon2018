@@ -63,10 +63,10 @@ def doing_in_night():
 @app.route('/vote', methods=['GET', 'POST'])
 def vote():
     # p_num = data[0]["participant"]
-    p_num = 3
+    num_p = 3
     now = 2
     print(now)
-    return render_template('vote.html', p_num=p_num, now=now)
+    return render_template('vote.html', num_p=num_p, now=now)
 
 
 @app.route('/vote', methods=['GET', 'POST'])

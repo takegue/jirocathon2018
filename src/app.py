@@ -58,7 +58,7 @@ def doing_in_night():
 
     
 
-    return render_template('play_position.html', positions=positions, data=data, now=now,num_p=num_p)
+    return render_template('play_position.html', positions=positions, data=data, now=now,num_p=num_p, data_dump=json.dumps(data))
 
 @app.route('/vote', methods=['GET', 'POST'])
 def vote():

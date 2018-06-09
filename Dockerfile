@@ -9,4 +9,4 @@ ADD ./src /app
 ENV FLASK_DEBUG=1
 
 EXPOSE 80
-ENTRYPOINT ["flask", "run"]
+ENTRYPOINT ["flask", "run", "--host=0.0.0.0", "--port=80"]

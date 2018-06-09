@@ -69,7 +69,7 @@ def doing_in_night():
         # now = int(request.form.get('now', 3))
         print("now: {}".format(request.form))
         if utils.now >= utils.num_p:
-            return render_template('result.html')
+            return render_template('vote.html')
 
     # data[0]["participant"] = str(num_p)
 
@@ -105,10 +105,13 @@ def doing_in_night():
 @app.route('/vote', methods=['GET', 'POST'])
 def vote():
     # p_num = data[0]["participant"]
-    num_p = 3
-    now = 2
-    print(now)
-    return render_template('vote.html', num_p=num_p, now=now)
+    utils.voted_now += 1
+    if request.method == 'POST':
+        # now = int(request.form.get('now', 3))
+        print("now: {}".format(request.form))
+        if utils.voted_now >= utils.num_p:
+            return render_template('result.html')
+    return render_template('vote.html', num_p=utils.num_p, now=utils.voted_now)
 
 if __name__ == '__main__':
 

@@ -9,11 +9,13 @@
           どの人が新規さんだと思いました？
         </p>
         <p>
-          <br> {% for i in range(num_p) %} {% if i+1 != now %}
-          <input type="radio" name="player" value="True">Player{{i+1}} {% endif %} {% endfor %}
+          <br>
+          <input type="radio" name="player" value="True">Player1
+          <input type="radio" name="player" value="True">Player2
+          <input type="radio" name="player" value="True">Player3
         </p>
         <div class="col-md-12" style="margin-top:10px; margin-bottom:20px;">
-          <form action="/result" method="post" class="form-inline">
+          <form action="/vote" method="post" class="form-inline">
             <button type="submit" value="{}" class="btn btn-primary" style="margin-top:5px;">
               決定
             </button>

@@ -16,6 +16,7 @@ class Utils():
         self.positions = ['新規', 'ジロリアン', '一般人', '店員', 'かえぽん']
         self.now = 0
         self.num_p = 0
+        self.voted_now = 1
 
     def decide_positions(self, num_p):
         """

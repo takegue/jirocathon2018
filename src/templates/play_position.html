@@ -12,8 +12,7 @@
     </p>
 
     <form method="post" action="/playing_do" class="form-inline">
-      <input name='game_info' style='visibility: hidden;'type="text" value="{{ data_dump }}">
-      {% if data[0]["player_{}".format(now)]['position'] == '新規' %}
+      <input name='game_info' style='visibility: hidden;' type="text" value="{{ data_dump }}"> {% if data[0]["player_{}".format(now)]['position'] == '新規' %}
       <p style="margin-left:15px;">
         自分の行動を選択してください。
       </p>
@@ -42,9 +41,8 @@
         <input type="radio" name="player" value="True">Player{{i+1}} {%endif%} {%endfor%}
       </p>
       {% endif %}
-
       <p>
-        <input type="submit" value="送信する">
+        <input type="submit" name="now" value="送信する">
       </p>
 
     </form>

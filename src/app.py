@@ -25,40 +25,47 @@ def route_timer():
 @app.route('/participants', methods=['GET', 'POST'])
 def get_participants():
     print("/participants")
-    num_p = 10
+    
     if request.method == 'POST':
-        num_p = int(request.form.get('participants', 3))
+        utils.num_p = int(request.form.get('participants', 3))
+        print("num_p: {}".format(utils.num_p))
 
     # TODO: /participantsへのpostの参加人数を受け取って、jsonに入れる
     # data[0]["participant"] = str(num_p)
 
-    data, positions = utils.decide_positions(num_p)
+    data, positions = utils.decide_positions(utils.num_p)
     print(positions)
     print(data)
-    now = 1
+    utils.now += 1
     return render_template(
         'play_position.html',
-        num_p=num_p,
+        num_p=utils.num_p,
         positions=positions,
         data=data,
         data_dump=json.dumps(data),
-        now=now
+        now=utils.now
     )
 
 @app.route('/playing_do', methods=['GET', 'POST'])
 def doing_in_night():
     # TODO: /participantsへのpostの参加人数を受け取って、jsonに入れる
-    num_p = 3
+    if request.method == 'POST':
+        # now = int(request.form.get('now', 3))
+        print("now: {}".format(request.form))
+        if utils.now >= utils.num_p:
+            return render_template('result.html')
+
     # data[0]["participant"] = str(num_p)
 
-    data, positions = utils.decide_positions(num_p)
-    print(positions)
-    print(data)
-    now = 1
+    data, positions = utils.decide_positions(utils.num_p)
+    # print(positions)
+    # print(data)
+    utils.now += 1
+    print("now : {}".format(utils.now))
 
     
 
-    return render_template('play_position.html', positions=positions, data=data, now=now,num_p=num_p, data_dump=json.dumps(data))
+    return render_template('play_position.html', positions=positions, data=data, now=utils.now,num_p=utils.num_p, data_dump=json.dumps(data))
 
 @app.route('/vote', methods=['GET', 'POST'])
 def vote():
@@ -67,11 +74,6 @@ def vote():
     now = 2
     print(now)
     return render_template('vote.html', num_p=num_p, now=now)
-
-
-@app.route('/vote', methods=['GET', 'POST'])
-def result():
-    return render_template('result.html')
 
 if __name__ == '__main__':
 

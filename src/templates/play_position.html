@@ -10,17 +10,25 @@
       <p style="margin-left:15px; font-weight:bold; font-size:120%;">
         あなたの役職は{{data[0]["player_{}".format(now)]['position']}}です。
       </p>
-      <p style="margin-left:15px;">
-        自分の行動を選択してください。
-      </p>
 
       <form method="post" action="/playing_do" class="form-inline">
         {% if data[0]["player_{}".format(now)]['position'] == '新規' %}
+        <p style="margin-left:15px;">
+          自分の行動を選択してください。
+        </p>
         <p>どの人に厄介行為をしますか？
           <br> {% for i in range(num_p) %} {% if i+1 != now %}
           <input type="radio" name="player" value="True">Player{{i+1}} {%endif%} {%endfor%}
         </p>
-        {% endif %}
+        {% elif data[0]["player_{}".format(now)]['position'] == 'ジロリアン' %}
+        <p>人狼の味方です。人狼を勝つことを祈りましょう。</p>
+        {% elif data[0]["player_{}".format(now)]['position'] == '一般人' %} {% elif data[0]["player_{}".format(now)]['position'] ==
+        '店員' %} {% elif data[0]["player_{}".format(now)]['position'] == 'かえぽん' %} {% endif %}
+
+
+
+
+
         <p>
           <input type="submit" value="送信する">
         </p>

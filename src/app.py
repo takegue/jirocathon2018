@@ -27,7 +27,7 @@ def get_participants():
     num_p = 3
     # data[0]["participant"] = str(num_p)
 
-    data, positions = utils.decide_positions(num_p-1)
+    data, positions = utils.decide_positions(num_p)
     print(positions)
     print(data)
     now = 1

@@ -15,11 +15,12 @@
       </p>
 
       <form method="post" action="/playing_do" class="form-inline">
+        {% if data[0]["player_{}".format(now)]['position'] == '新規' %}
         <p>どの人に厄介行為をしますか？
           <br> {% for i in range(num_p) %} {% if i+1 != now %}
           <input type="radio" name="player" value="True">Player{{i+1}} {%endif%} {%endfor%}
-
         </p>
+        {% endif %}
         <p>
           <input type="submit" value="送信する">
         </p>

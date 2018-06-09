@@ -36,7 +36,6 @@ def get_participants():
     print(positions)
     print(data)
     now = 1
-<<<<<<< HEAD
     return render_template(
         'play_position.html',
         num_p=num_p,
@@ -44,9 +43,6 @@ def get_participants():
         data=data,
         now=now
     )
-=======
-    return render_template('play_position.html', positions=positions, data=data, now=now,num_p=num_p)
->>>>>>> 5b15b31fe143838593a38d53ea87034a1fe0aaaa
 
 @app.route('/playing_do', methods=['GET', 'POST'])
 def doing_in_night():

@@ -87,6 +87,7 @@ def doing_in_night():
         positions=positions,
         data=data, now=now,
         num_p=num_p,
+        data_dump=json.dumps(data),
         image_url=url_for(
             'static',
             filename=role2images.get(role, 'images/foodfighter_ramen'))

@@ -41,6 +41,7 @@ def get_participants():
         num_p=num_p,
         positions=positions,
         data=data,
+        data_dump=json.dumps(data),
         now=now
     )
 
@@ -55,7 +56,6 @@ def doing_in_night():
     print(data)
     now = 1
     return render_template('play_position.html', positions=positions, data=data, now=now,num_p=num_p)
-
 
 
 if __name__ == '__main__':

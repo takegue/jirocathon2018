@@ -25,15 +25,24 @@ def route_timer():
 @app.route('/participants', methods=['GET', 'POST'])
 def get_participants():
     print("/participants")
+    num_p = 10
+    if request.method == 'POST':
+        num_p = int(request.form.get('participants', 3))
+
     # TODO: /participantsへのpostの参加人数を受け取って、jsonに入れる
-    num_p = 3
     # data[0]["participant"] = str(num_p)
 
     data, positions = utils.decide_positions(num_p)
     print(positions)
     print(data)
     now = 1
-    return render_template('play_position.html', positions=positions, data=data, now=now,num_p=num_p)
+    return render_template(
+        'play_position.html',
+        num_p=num_p,
+        positions=positions,
+        data=data,
+        now=now
+    )
 
 @app.route('/playing_do', methods=['GET', 'POST'])
 def doing_in_night():

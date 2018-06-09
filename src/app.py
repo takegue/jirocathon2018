@@ -37,13 +37,29 @@ def get_participants():
     print(positions)
     print(data)
     utils.now += 1
+
+    role = data[0][f'player_{utils.now}']['position']
+    role2images = {
+        '新規': 'images/counter_ramen_man.png',
+        'ジロリアン': 'images/ramen_megane_kumoru.png',
+        '一般人': 'images/foodfighter_ramen',
+        '店員': 'images/ramen_tenin.png',
+        'かえぽん': 'images/kaepon.jpg',
+    }
+
     return render_template(
         'play_position.html',
         num_p=utils.num_p,
         positions=positions,
         data=data,
         data_dump=json.dumps(data),
-        now=utils.now
+        now=utils.now,
+        image_url=url_for(
+            'static',
+            filename=role2images.get(
+                role, 'images/foodfighter_ramen'
+            )
+        )
     )
 
 @app.route('/playing_do', methods=['GET', 'POST'])
@@ -63,9 +79,28 @@ def doing_in_night():
     utils.now += 1
     print("now : {}".format(utils.now))
 
-    
+    role = data[0][f'player_{utils.now}']['position']
+    # print(now)
+    # print(role)
+    role2images = {
+        '新規': 'images/counter_ramen_man.png',
+        'ジロリアン': 'images/ramen_megane_kumoru.png',
+        '一般人': 'images/foodfighter_ramen',
+        '店員': 'images/ramen_tenin.png',
+        'かえぽん': 'images/kaepon.jpg',
+    }
 
-    return render_template('play_position.html', positions=positions, data=data, now=utils.now,num_p=utils.num_p, data_dump=json.dumps(data))
+
+    return render_template(
+        'play_position.html',
+        positions=positions,
+        data=data, now=utils.now,
+        num_p=utils.num_p,
+        data_dump=json.dumps(data),
+        image_url=url_for(
+            'static',
+            filename=role2images.get(role, 'images/foodfighter_ramen'))
+    )
 
 @app.route('/vote', methods=['GET', 'POST'])
 def vote():

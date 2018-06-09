@@ -11,7 +11,7 @@ services:
       ports:
           - 10701:80
       volumes:
-          - ./:/app
+          - ./src:/app
       environment:
           - DJANGO_DEBUG=1
       env_file:

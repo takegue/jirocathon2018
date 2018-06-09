@@ -41,6 +41,7 @@ def get_participants():
         num_p=num_p,
         positions=positions,
         data=data,
+        data_dump=json.dumps(data),
         now=now
     )
 
@@ -66,6 +67,7 @@ def vote():
     now = 2
     print(now)
     return render_template('vote.html', p_num=p_num, now=now)
+
 
 @app.route('/vote', methods=['GET', 'POST'])
 def result():

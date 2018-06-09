@@ -5,11 +5,27 @@
   <div class="row">
     <div class="col-md-12">
       <p style="margin-left:15px; font-weight:bold; font-size:120%;">
+        Player{{now}}さん、
+      </p>
+      <p style="margin-left:15px; font-weight:bold; font-size:120%;">
         あなたの役職は{{data[0]["player_{}".format(now)]['position']}}です。
       </p>
       <p style="margin-left:15px;">
         自分の行動を選択してください。
       </p>
+
+      <form method="post" action="/playing_do" class="form-inline">
+        <p>どの人に厄介行為をしますか？
+          <br> {% for i in range(num_p) %} {% if i+1 != now %}
+          <input type="radio" name="player" value="True">Player{{i+1}} {%endif%} {%endfor%}
+
+        </p>
+        <p>
+          <input type="submit" value="送信する">
+        </p>
+
+      </form>
+
 
 
 

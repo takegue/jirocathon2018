@@ -1,0 +1,17 @@
+[
+  {
+    "participant": "",
+    "player_1": {
+      "position": "",
+      "night": {
+        "behavior": ""
+      },
+      "noon": {
+        "vote": ""
+      }
+    },
+    "result": {
+      "winner": ""
+    }
+  }
+]

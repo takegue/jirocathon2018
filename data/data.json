@@ -1,0 +1,62 @@
+[
+  {
+    "participant": "",
+    "player_1": {
+      "position": "",
+      "night": {
+        "behavior": ""
+      },
+      "noon": {
+        "vote": ""
+      }
+    },
+    "player_2": {
+      "position": "",
+      "night": {
+        "behavior": ""
+      },
+      "noon": {
+        "vote": ""
+      }
+    },
+    "player_3": {
+      "position": "",
+      "night": {
+        "behavior": ""
+      },
+      "noon": {
+        "vote": ""
+      }
+    },
+    "player_4": {
+      "position": "",
+      "night": {
+        "behavior": ""
+      },
+      "noon": {
+        "vote": ""
+      }
+    },
+    "player_5": {
+      "position": "",
+      "night": {
+        "behavior": ""
+      },
+      "noon": {
+        "vote": ""
+      }
+    },
+    "player_6": {
+      "position": "",
+      "night": {
+        "behavior": ""
+      },
+      "noon": {
+        "vote": ""
+      }
+    },
+    "result": {
+      "winner": ""
+    }
+  }
+]
